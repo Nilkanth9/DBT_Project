@@ -1,0 +1,41 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+  
+  - name: Education
+    description: "Model description for Education"
+    columns:
+      - name: MARITAL
+        description: "Marital status of the individuals"
+        tests:
+          - marital_status:
+              column_name: "MARITAL"
+  
+ 
+sources:
+  - name: SNOW_SQL
+    schema: PUBLIC
+    tables:
+      - name: BANK_DETAILS1
+        description: "All_Orders details from bank table"
+      - name: ORDERS
+        description: "All_Orders details from orders table"
+      

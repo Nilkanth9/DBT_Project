@@ -1,0 +1,2 @@
+SELECT {{ select_columns(['CUSTOMER_ID', 'JOB', 'MONTH']) }}
+FROM BANK_DETAILS1
